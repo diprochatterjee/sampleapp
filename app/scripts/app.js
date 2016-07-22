@@ -28,6 +28,7 @@ angular
   $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth; */
   /*$httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];*/
+
   $httpProvider.interceptors.push('loadingInterceptor');
   // For any unmatched url, redirect to /
   $urlRouterProvider.otherwise('/');
@@ -46,4 +47,5 @@ angular
       controller: 'ViewAllCtrl',
       controllerAs: 'vw'
     });
+    
   });

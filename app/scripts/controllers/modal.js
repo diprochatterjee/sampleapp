@@ -9,13 +9,19 @@
  */
 angular.module('crudsampleApp')
   .controller('ModalCtrl', function ($uibModalInstance,$scope) {
+    
     var self = this;
-    console.log($scope.message);
+    
     self.ok = function () {
-    	$uibModalInstance.close();
+      
+      	$uibModalInstance.close();
+
   	};
 
   	self.cancel = function () {
-    	$uibModalInstance.dismiss('cancel');
+    	 
+        $uibModalInstance.dismiss('cancel');
+        
   	};
+
   });

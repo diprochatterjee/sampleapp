@@ -13,6 +13,7 @@ angular.module('crudsampleApp')
    var httpRequestCounter = 0;
 
     return {
+
         request: function (config) {
 
             httpRequestCounter++;
@@ -22,6 +23,7 @@ angular.module('crudsampleApp')
             return config || $q.when(config);
 
         },
+
         response: function (response) {
 
             if ((--httpRequestCounter) === 0) {
@@ -32,6 +34,7 @@ angular.module('crudsampleApp')
             return response || $q.when(response);
 
         },
+
         responseError: function (response) {
 
             if (!(--httpRequestCounter)) {
@@ -41,6 +44,7 @@ angular.module('crudsampleApp')
 
             return $q.reject(response);
         }
+        
     };
 
   });

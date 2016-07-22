@@ -1,6 +1,9 @@
 <div class="container">
-<div ng-hide="vw.emptyList === false">
+<div ng-hide="vw.emptyList === false" class="alert alert-warning">
   <p ng-bind="::vw.errorMessage"></p>
+</div>
+<div ng-if="vw.deleteRequested" ng-class="vw.deleteResponseClass">
+  <p ng-bind="vw.deleteResponseMessage"></p>
 </div>
 <div class="row" ng-hide="vw.emptyList === true">
 
@@ -14,6 +17,7 @@
         <tr ng-repeat="message in vw.currentPageMessageList" track by $index>
           <td><p ng-bind="message.dateTime"></p></td>
           <td><p ng-bind="message.text"></p></td>
+          <td><button class="btn btn-danger btn-sm" ng-click="vw.deleteMessage(message.id,$index)">Delete</button></td>
         </tr>
       </tbody>
     </table>
