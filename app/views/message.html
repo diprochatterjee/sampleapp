@@ -12,11 +12,11 @@
   
     Post your message here:
    <input type="text" ng-model="message.text" placeholder="What is on your mind?" required>
-   <button class="btn btn-primary btn-sm" ng-disabled="messageForm.$invalid" ng-click="msg.reset()">Clear Message
-   </button>
+   
    <button class="btn btn-primary btn-sm" ng-disabled="messageForm.$invalid">Publish!
    </button>
- 
+ <button class="btn btn-primary btn-sm" ng-disabled="messageForm.$invalid" ng-click="msg.reset()">Clear Message
+   </button>
  
 </form>
 </div>
