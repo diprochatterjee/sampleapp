@@ -1,0 +1,27 @@
+<div class="container">
+<div ng-hide="vw.emptyList === false">
+  <p ng-bind="::vw.errorMessage"></p>
+</div>
+<div class="row" ng-hide="vw.emptyList === true">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>All published messages!</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="message in vw.currentPageMessageList" track by $index>
+          <td><p ng-bind="message.dateTime"></p></td>
+          <td><p ng-bind="message.text"></p></td>
+        </tr>
+      </tbody>
+    </table>
+    Number of messages per page : 
+        <button class="btn btn-info btn-sm" ng-click="vw.changeMessagesPerPage(5)">5</button>
+        <button class="btn btn-info btn-sm" ng-click="vw.changeMessagesPerPage(10)">10</button>
+        <uib-pagination total-items="vw.list.length" ng-model="vw.currentPage" 
+        ng-change="vw.changePage()" boundary-links="true" items-per-page="vw.messagesPerPage">
+        </uib-pagination>
+</div>
+</div>

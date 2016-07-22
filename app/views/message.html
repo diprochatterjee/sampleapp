@@ -1,0 +1,22 @@
+<div class="container-fluid lead">
+  <h3>Publish your message to Cognizone using our API</h3><br><br>
+
+<div ng-if="msg.error" class="alert alert-danger">
+  <p ng-bind="msg.errorMessage"></p>
+</div>
+<div ng-if="msg.success" class="alert alert-success">
+  <p ng-bind="msg.successMessage"></p>
+</div>
+<form name="messageForm" ng-submit="messageForm.$valid && msg.open()">
+  
+  
+    Post your message here:
+   <input type="text" ng-model="message.text" placeholder="What is on your mind?" required>
+   <button class="btn btn-primary btn-sm" ng-disabled="messageForm.$invalid" ng-click="msg.reset()">Clear Message
+   </button>
+   <button class="btn btn-primary btn-sm" ng-disabled="messageForm.$invalid">Publish!
+   </button>
+ 
+ 
+</form>
+</div>
